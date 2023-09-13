@@ -1,7 +1,7 @@
 ---
 title: "Week 02: COVID Visualization Activity"
 date: "September, 11 2023"
-author: "**`[[`**Your Name**`]]`**"
+author: "Rohan Anand"
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -31,11 +31,29 @@ For now, see what you can do just using `ggplot`.
 
 ```{r}
 covid_data_count |> 
-  filter(state == "MA") |> 
+  filter(state == "MA") |>
   ggplot(aes(x = date, y = Cases, color = race)) + geom_line()
 ```
 
+
+```{r}
+  covid_data_count |> 
+  filter(state == "NH") |>
+  ggplot(aes(x = date, y = Deaths, color = race)) + geom_line()
+```
+
 1. Write code for a plot and describe what you observe?
+
+I plotted the deaths per date in New Hampshire. I observed that the deaths were relatively low for a set of dates that were year long. I also observed that white people had the highest number of deaths by far. 
+
 2. Are there any conclusions you can draw?
+
+One conclusion I can draw is that the deaths for white people are significantly higher than those of other races because NH has a disproportionately higher white population compared to other races.
+
 3. What were you not able to do due to not having the R knowledge?
+
+I wanted to factor in the proportion of each race into the deaths to understand whether the death rate relative to the population was the same for each race or whether any race was dying at abnormal rates.
+
 4. What other data would be useful to better understand this data?
+
+Vaccination data for each race would help to better understand this data because it could be the case another race could have the same death rate as white people, but they are vaccinated, meaning they are not dying at the same rate. 
